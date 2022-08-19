@@ -1,6 +1,8 @@
 # Custom
 /config.json
 .vscode/
+*.sqlite
+package-lock.json
 
 # Logs
 logs
