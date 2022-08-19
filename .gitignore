@@ -4,6 +4,9 @@
 *.sqlite
 package-lock.json
 
+# Database
+*.sqlite
+
 # Logs
 logs
 *.log

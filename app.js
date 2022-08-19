@@ -1,17 +1,24 @@
-require("dotenv").config();
-const express = require("express");
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+
+const route = require('./routes/index');
+const heroRoute = require('./routes/heroRoute');
+const userHeroRoute = require('./routes/userHeroRoute');
+
 const app = express();
-// const routes = require("./routes");
+const port = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
-  res.send("Hi");
-});
+app.use(cors());
 
-// app.use("/api", routes);
+// Configuring body parser middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-// listening to things
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, (err) => {
-  if (err) return console.log(err);
-  console.log(`Listening on ${PORT}`);
+app.use('/', route);
+app.use('/heros', heroRoute);
+app.use('/userHeros', userHeroRoute);
+
+app.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
 });
