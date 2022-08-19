@@ -2,6 +2,9 @@
 /config.json
 .vscode/
 
+# Database
+*.sqlite
+
 # Logs
 logs
 *.log
