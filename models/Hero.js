@@ -2,7 +2,7 @@ const { DataTypes: { INTEGER, STRING } } = require('sequelize');
 
 module.exports = (sequelize) => {
     const Hero = sequelize.define('Hero', {
-        id: {
+        hid: {
             type: INTEGER,
             autoIncrement: true,
             primaryKey: true
